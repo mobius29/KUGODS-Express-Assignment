@@ -5,6 +5,6 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use('/', controller);
+app.use('/api', controller);
 
 module.exports = app;

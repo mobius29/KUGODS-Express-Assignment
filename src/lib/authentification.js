@@ -23,7 +23,6 @@ const verify = async (password, hashedPassword) => {
   const iter = parseInt(hashed_itr);
   const key_len = parseInt(hashed_keylen);
   const digest = Buffer.from(hashed_digest, 'base64');
-
   const dig = await pbkdf2(password, salt, iter, key_len, algo);
   return Buffer.compare(dig, digest) === 0;
 };
